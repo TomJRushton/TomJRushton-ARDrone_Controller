@@ -1,0 +1,23 @@
+{
+  "name": "Drone",
+  "version": "1.0.0",
+  "dependencies": {
+    "ar-drone": "git://github.com/felixge/node-ar-drone.git",
+    "better-xbox-controller": "^0.1.3",
+    "broadway": "^4.1.0",
+    "commander": "^5.0.0",
+    "dronestream": "^1.1.1",
+    "express": "^4.17.1",
+    "ffmpeg": "0.0.4",
+    "gamepad": "git+https://github.com/creationix/node-gamepad.git",
+    "lodash": "^4.17.15",
+    "node-hid": "^1.2.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.3.0",
+    "util": "^0.12.2",
+    "xbox360-controller": "git+https://github.com/athorsen/xbox360-controller.git"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.5.1"
+  }
+}

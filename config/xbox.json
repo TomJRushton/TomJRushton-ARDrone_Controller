@@ -1,0 +1,24 @@
+{
+  "axis": {
+    "3": [ "left", "right" ],
+    "2": [ "front", "back" ],
+    "1": [ "counterClockwise", "clockwise" ],
+    "0": [ "up", "down" ]
+  },
+  "buttons": {
+    "13": ["stop recording"],
+    "12": ["start recording"],
+    "11": ["down"],
+    "10": ["up"],
+    "9": ["disableEmergency"],
+    "8": [""],
+    "7": [""],
+    "6": [""],
+    "5": ["land"],
+    "4": ["takeoff"],
+    "3": ["clockwise"],
+    "2": ["clockwise"],
+    "1": ["back"],
+    "0": ["front"]
+  }
+}
