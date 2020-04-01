@@ -5,14 +5,13 @@
 var gamepad = require("gamepad");
 var arDrone = require('ar-drone');
 var program = require('commander');
-var record = require('./video/saveVideo');
 
 /**
  * Setup command-line options.
  */
 
 program
-    .version(require('./package.json').version)
+    .version(require('../package.json').version)
     .option('-i, --ip [val]', 'drone IP address or hostname to connect to (default: "192.168.1.1")', '192.168.1.1')
     .option('-c, --controls [mode]', 'controller configuration to use (default: "xbox")', 'xbox')
     .parse(process.argv);
@@ -39,6 +38,7 @@ client.on('navdata', function (navdata) {
     if (navdata && navdata.demo && navdata.demo.batteryPercentage && battery !== navdata.demo.batteryPercentage) {
         battery = navdata.demo.batteryPercentage;
         console.log("Battery percentage:", battery);
+        //document.getElementById('battery-indicator').value = battery;
     }
 });
 
@@ -102,13 +102,21 @@ gamepad.on("down", function (id, num) {
         client[func]();
     }
 
+
     //Start recording
     if(num == 12){
-        record
+        var record = require('../video/saveVideo');
+        console.log("Started Recording");
     }
-
     //Stop recording
     if(num == 13){
+        var record = require('../video/saveVideo');
+        record.saveVid();
+        console.log("Stopped Recording");
+    }
 
+    if(num == 8){
+        //require('../video/saveVideo');
+        //recording.
     }
 });

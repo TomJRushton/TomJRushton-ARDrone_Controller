@@ -1,4 +1,0 @@
-cd..
-cd..
-cd Program Files\ffmpeg\bin
-node C:\Drone\app.js

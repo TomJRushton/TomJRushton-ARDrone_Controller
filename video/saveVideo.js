@@ -1,8 +1,15 @@
 var arDrone = require('ar-drone');
 var PaVEParser = require('../lib/PaVEParser');
-var output = require('fs').createWriteStream('./vid.h264');
+var number = 1;
+const vidChecker = require('fs');
+var path = "./video/videos/vid" + number + ".h264";
 
-var video = arDrone.createClient().getVideoStream();
+console.log(path);
+
+
+var output = require('fs').createWriteStream(path);
+var video = arDrone.createClient({ip: "192.168.1.1"}).getVideoStream();
+//var video = require('dronestream').listen(3001);
 var parser = new PaVEParser();
 
 parser
@@ -14,4 +21,9 @@ parser
         output.end();
     });
 
-video.pipe(parser);
+module.exports = {
+    saveVid: function(){
+        video.pipe(parser)    }
+}
+
+

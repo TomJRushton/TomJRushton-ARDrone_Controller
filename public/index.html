@@ -3,7 +3,6 @@
 <head>
     <title>Node JS Copter Demo</title>
     <script src="nodecopter-client.js"></script>
-    <script src="socket.io.min.js"></script>
     <script src="jquery.min.js"></script>
     <script>
         $(function () {
@@ -11,70 +10,19 @@
             function startArDRoneStream() {
                 new NodecopterStream(document.getElementById("placeholder"), {port: 3001});
             }
-
-            // function startCameraFeed() {
-            //     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-            //
-            //     var constraints = {audio: false, video: true};
-            //     var video = document.querySelector("video");
-            //
-            //     function successCallback(stream) {
-            //         window.stream = stream; // stream available to console
-            //         if (window.URL) {
-            //             video.src = window.URL.createObjectURL(stream);
-            //         } else {
-            //             video.src = stream;
-            //         }
-            //         video.play();
-            //     }
-            //
-            //     function errorCallback(error){
-            //         console.log("navigator.getUserMedia error: ", error);
-            //     }
-            //
-            //     navigator.getUserMedia(constraints, successCallback, errorCallback);
-            //
-            // }
-            // function startArDroneController(){
-            //     var socket = io.connect('http://localhost:3002');
-            //     socket.on('connect', function () { // TIP: you can avoid listening on `connect` and listen on events directly too!
-            //         console.log("Connection Successful");
-            //
-            //     });
-            //
-            //     socket.on('event', function (data) {
-            //
-            //         if(data.name=="battery"){
-            //             $("#battery-indicator").css('width',data.value+'%');
-            //             $("#battery-value").html(data.value+'%');
-            //         }
-            //     });
-            //
-            //     $("#takeoff").click(function(){
-            //         console.log("Asking Server to send takeoff command to Ar Drone");
-            //         socket.emit('event',{name:"takeoff"});
-            //     });
-            //     $("#spin").click(function(){
-            //         console.log("Asking Server to send spin command to Ar Drone");
-            //         socket.emit('event',{name:"spin"});
-            //     });
-            //     $("#stop").click(function(){
-            //         console.log("Asking Server to send stop command to Ar Drone");
-            //         socket.emit('event',{name:"stop"});
-            //     });
-            //     $("#land").click(function(){
-            //         console.log("Asking Server to send land command to Ar Drone");
-            //         socket.emit('event',{name:"land"});
-            //     });
-            //
-            // }
             startArDRoneStream();
-            //startCameraFeed();
-            //startArDroneController();
-
         })
     </script>
     <style>
+        tbody{
+            width:80%;
+        }
+        canvas{
+            width: 100%;
+        }
+        table{
+            width:90%;
+        }
         td {
             border:1px solid black;
             border-radius:10px;
@@ -85,7 +33,7 @@
         }
         #battery{
             border:1px solid black;
-            width:500px;
+            width:90%;
             height:20px;
             text-align: center;
         }
@@ -125,22 +73,38 @@
 <!--            <button id="land">Land</button>-->
 <!--        </td>-->
         <td>
-
             <span>Battery</span> - <span id="battery-value"></span>
             <div class="bar color0">
-                <span id="battery-indicator" style="width:50%"></span>
+                <span id="battery-indicator" style="width:100%"></span>
             </div>
         </td>
     </tr>
     <tr>
         <td>
-            <h1>Ar Drone Video Feed</h1>
+<!--            <h1>Ar Drone Video Feed</h1>-->
             <div id="placeholder"></div>
         </td>
-<!--        <td>-->
-<!--            <h1>Laptop Camera Feed</h1>-->
-<!--            <video id="live" width="640" height="360" autoplay></video>-->
-<!--        </td>-->
+        <td>
+            <div id="controls">
+                <h1>Drone Controls</h1>
+                <h2>Buttons</h2>
+                    <div>A = Upwards</div>
+                    <div>B = Downwards</div>
+                    <div>X<div>
+                    <div>Y<div>
+                    <div>Left Stick<div>
+                    <div>Right Stick<div>
+                    <div>START = Take Off<div>
+                    <div>SELECT = Land<div>
+                    <div>LB = Finish Recording<div>
+                    <div>RB = Emergency Landing<div>
+                <h2>D - Pad</h2>
+                    <div>Up = Forwards<div>
+                    <div>Down = Backwards<div>
+                    <div>Left = Turn Left<div>
+                    <div>Right = Turn Right<div>
+            </div>
+        </td>
     </tr>
 </table>
 
