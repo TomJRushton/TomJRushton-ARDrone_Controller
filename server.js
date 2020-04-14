@@ -19,8 +19,7 @@ module.exports = {
         app.use(express.static(__dirname + '/public'));
 
         require("./xbox-controller/xbox_controller");
-        require("./video/saveVideo");
-
+        //require("./video/saveVideo");
         app.listen(3000);
 
     }

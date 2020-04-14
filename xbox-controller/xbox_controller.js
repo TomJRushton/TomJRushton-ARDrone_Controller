@@ -34,10 +34,13 @@ console.log('Connecting to drone at %j', program.ip);
  * Show remaining battery percentage from navdata
  */
 var battery = null;
+//Only show the battery change every 5%
 client.on('navdata', function (navdata) {
     if (navdata && navdata.demo && navdata.demo.batteryPercentage && battery !== navdata.demo.batteryPercentage) {
         battery = navdata.demo.batteryPercentage;
-        console.log("Battery percentage:", battery);
+        if((battery % 5) == 0){
+            console.log("Battery percentage:", battery);
+        }
         //document.getElementById('battery-indicator').value = battery;
     }
 });
@@ -106,6 +109,7 @@ gamepad.on("down", function (id, num) {
     //Start recording
     if(num == 12){
         var record = require('../video/saveVideo');
+        record.startRecording();
         console.log("Started Recording");
     }
     //Stop recording

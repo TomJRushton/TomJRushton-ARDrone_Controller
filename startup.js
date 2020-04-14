@@ -15,13 +15,9 @@ rl.on('line', (input) => {
     }else{
         if(input == 1){
             startUpMode.launchRecordServer();
-            //require('./video/recordVideo')
         }
         if(input == 2){
             startUpMode.launchStreamServer();
-            //require('./server');
         }
     }
-
-    //console.log(`Received: ${input}`);
 });

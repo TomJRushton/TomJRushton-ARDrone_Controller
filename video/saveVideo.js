@@ -4,14 +4,26 @@ var number = 1;
 const vidChecker = require('fs');
 var path = "./video/videos/vid" + number + ".h264";
 
-console.log(path);
-
+//Checks for existing videos, updating the video number if found
+while(vidChecker.existsSync(path)){
+    number = number + 1;
+    path = "./video/videos/vid" + number + ".h264";
+}
 
 var output = require('fs').createWriteStream(path);
-var video = arDrone.createClient({ip: "192.168.1.1"}).getVideoStream();
-//var video = require('dronestream').listen(3001);
 var parser = new PaVEParser();
+var video;
+module.exports = {
+    startRecording: function(){
+        video = arDrone.createClient({ip: "192.168.1.1"}).getVideoStream();
+    },
 
+    //Exports the pipe function so the user can control when the video is saved
+    saveVid: function(){
+        video.pipe(parser)}
+}
+
+//Parses the video data through the PaVEParser to redact the custom framing
 parser
     .on('data', function(data) {
         output.write(data.payload);
@@ -20,10 +32,3 @@ parser
     .on('end', function() {
         output.end();
     });
-
-module.exports = {
-    saveVid: function(){
-        video.pipe(parser)    }
-}
-
-
