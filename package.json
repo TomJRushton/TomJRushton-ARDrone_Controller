@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "dependencies": {
     "ar-drone": "git://github.com/felixge/node-ar-drone.git",
-    "better-xbox-controller": "^0.1.3",
     "broadway": "^4.1.0",
     "commander": "^5.0.0",
     "dronestream": "^1.1.1",
