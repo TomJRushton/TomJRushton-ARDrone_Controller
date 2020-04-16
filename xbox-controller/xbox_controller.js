@@ -1,5 +1,5 @@
 /**
- * Module dependencies.
+ * This class intergrates the gamepad library with he drone controls
  */
 
 var gamepad = require("gamepad");
@@ -16,23 +16,18 @@ program
     .option('-c, --controls [mode]', 'controller configuration to use (default: "xbox")', 'xbox')
     .parse(process.argv);
 
-/**
- * Attempt to load the requested config.
- */
 
+ //Attempt to load the requested config.
 var config = require('./config/' + program.controls);
 console.log('Loaded %j config', program.controls);
 
-/**
- * Create client connection to the AR.Drone.
- */
 
+ //Create client connection to the AR.Drone.
 var client  = arDrone.createClient({ ip: program.ip });
 console.log('Connecting to drone at %j', program.ip);
 
-/**
- * Show remaining battery percentage from navdata
- */
+
+//Show remaining battery percentage from navdata in console
 var battery = null;
 //Only show the battery change every 5%
 client.on('navdata', function (navdata) {
@@ -76,6 +71,7 @@ gamepad.on("down", function (id, num) {
     data = config.buttons[num];
     if (!data) return;
     func = data[0];
+    //Each function takes different values so most had to be split up
     if(num == 3){
         console.log("id: " + id + ", value: " + num, func);
         client[func](1);
@@ -119,8 +115,5 @@ gamepad.on("down", function (id, num) {
         console.log("Stopped Recording");
     }
 
-    if(num == 8){
-        //require('../video/saveVideo');
-        //recording.
-    }
+
 });

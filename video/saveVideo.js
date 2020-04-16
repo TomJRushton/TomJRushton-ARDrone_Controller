@@ -1,3 +1,7 @@
+/**
+ * Class to save a simple tcp stream from the drone to be streamed to a server
+ */
+
 var arDrone = require('ar-drone');
 var PaVEParser = require('../lib/PaVEParser');
 var number = 1;
