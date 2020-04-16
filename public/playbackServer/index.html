@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Node JS Copter Demo - Record / Viewing</title>
+  <title>Node JS Copter Demo - Viewer</title>
   <script src="nodecopter-client.js"></script>
   <script src="jquery.min.js"></script>
   <script>
@@ -64,16 +64,8 @@
 </head>
 
 <body>
-<h1>Ar Drone Demo - Record \ View Mode</h1>
+<h1>Ar Drone Demo - View Mode</h1>
 <table>
-  <tr>
-    <td>
-      <span>Battery</span> - <span id="battery-value"></span>
-      <div class="bar color0">
-        <span id="battery-indicator" style="width:100%"></span>
-      </div>
-    </td>
-  </tr>
   <tr>
     <td>
       <button type="button" onclick="wsavc.playStream()">Start Video</button>
@@ -101,13 +93,13 @@
                   <div>SELECT = Land<div>
                     <div>LB = No Binding<div>
                       <div>RB = Emergency Landing<div>
+                        <div>LT = No Binding</div>
+                        <div>RT = No Binding</div>
                         <h2>D - Pad</h2>
                         <div>Up = Forwards<div>
                           <div>Down = Backwards<div>
                             <div>Left = Turn Left<div>
                               <div>Right = Turn Right<div>
-                                <div>LT = No Binding</div>
-                                <div>RT = No Binding</div>
                               </div>
     </td>
   </tr>
