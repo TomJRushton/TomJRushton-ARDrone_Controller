@@ -1,10 +1,10 @@
-#A.R Drone Controller
+# A.R Drone Controller
 This is a multi layered controller for the Parrot A.R Drone 2.0, allowing for control of the drone using an wired Xbox360 controller
  whist streaming the video feed to a local server.
  
 It is also able to record and save videos from the drone, which can then be viewed inside your web page.
 
-##Usage
+## Usage
 To start the application run :
 ```bash
 node startup.js
@@ -18,7 +18,7 @@ for an wired Xbox360 controller but other controllers could be implemented.
 
 **Viewing Mode** : Allows for playback of a selected recorded video.
 
-##Credits
+## Credits
 [131](https://github.com/131/h264-live-player)<br>
 [Node-dronestream](https://github.com/bkw/node-dronestream)<br>
 [Node-ar-drone](https://github.com/felixge/node-ar-drone)<br>
