@@ -13,7 +13,7 @@
     "lodash": "^4.17.15",
     "node-hid": "^1.2.0",
     "path": "^0.12.7",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "util": "^0.12.2",
     "xbox360-controller": "git+https://github.com/athorsen/xbox360-controller.git"
   },
