@@ -10,7 +10,7 @@
     "express": "^4.17.1",
     "ffmpeg": "0.0.4",
     "gamepad": "git+https://github.com/creationix/node-gamepad.git",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-hid": "^1.2.0",
     "path": "^0.12.7",
     "socket.io": "^2.3.0",
